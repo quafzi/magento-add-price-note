@@ -33,5 +33,14 @@
                 </observers>
             </core_block_abstract_to_html_after>
         </events>
+        <translate>
+            <modules>
+                <Quafzi_AddPriceNote>
+                    <files>
+                        <quafzi_addpricenote>Quafzi_AddPriceNote.csv</quafzi_addpricenote>
+                    </files>
+                </Quafzi_AddPriceNote>
+            </modules>
+        </translate>
     </frontend>
 </config>
