@@ -1,0 +1,15 @@
+{
+    "name": "quafzi/magento-add-price-note",
+    "license": "OSL-3.0",
+    "type": "magento-module",
+    "description": "Magento module to add some note below all prices, depending on customer group",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "authors": [
+        {
+            "name": "Thomas Birke",
+            "email": "magento@netextreme.de"
+        }
+    ]
+}

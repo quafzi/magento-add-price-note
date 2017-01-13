@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of Quafzi_AddPriceNote
+ *
+ * PHP version 7
+ *
+ * @package   Quafzi_AddPriceNote
+ * @author    Thomas Birke <magento@netextreme.de>
+ * @copyright 2017 Thomas Birke
+ * @license   OSL-3.0
+ */
+-->
+<config>
+    <sections>
+        <catalog>
+            <groups>
+                <price>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <price_note_enabled translate="label,comment" module="quafzi_addpricenote">
+                            <label>Display Custom Link below Price</label>
+                            <comment>Display tax info and shipping cost link below the price on all pages</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </price_note_enabled>
+                        <price_notes translate="label" module="quafzi_addpricenote">
+                            <label>Price notes depending on customer group</label>
+                            <frontend_model>quafzi_addpricenote/adminhtml_form_field_pricenotes</frontend_model>
+                            <backend_model>quafzi_addpricenote/system_config_backend_pricenotes</backend_model>
+                            <depends>
+                                <price_note_enabled>1</price_note_enabled>
+                            </depends>
+                            <sort_order>301</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                       </price_notes>
+                    </fields>
+                </price>
+            </groups>
+        </catalog>
+    </sections>
+</config>
