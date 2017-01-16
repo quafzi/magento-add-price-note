@@ -24,14 +24,14 @@
     </global>
     <frontend>
         <events>
-            <core_block_abstract_to_html_after>
+            <magesetup_after_product_price>
                 <observers>
                     <quafzi_addpricenote_observer>
                         <class>quafzi_addpricenote/observer</class>
                         <method>addPriceNote</method>
                     </quafzi_addpricenote_observer>
                 </observers>
-            </core_block_abstract_to_html_after>
+            </magesetup_after_product_price>
         </events>
         <translate>
             <modules>

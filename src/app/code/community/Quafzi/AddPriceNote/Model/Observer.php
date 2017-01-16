@@ -20,14 +20,13 @@ class Quafzi_AddPriceNote_Model_Observer
 {
     public function addPriceNote (Varien_Event_Observer $observer)
     {
-        $block = $observer->getEvent()->getBlock();
-        if ($block instanceof Mage_Catalog_Block_Product_Price
-            && ($linkTarget = Mage::helper('quafzi_addpricenote/config')->getLinkTarget())
-            && ($linkText = Mage::helper('quafzi_addpricenote/config')->getLinkText())
+        $helper = Mage::helper('quafzi_addpricenote/config');
+        if (($linkTarget = $helper->getLinkTarget())
+            && ($linkText = $helper->getLinkText())
         ) {
-            $observer->getEvent()->getTransport()->setHtml(
-                $observer->getEvent()->getTransport()->getHtml()
-                . '<a href="' . $linkTarget . '">' . $linkText . '</a>'
+            $observer->getEvent()->getHtmlObj()->setHtml(
+                '<div style="margin-bottom: 10px; margin-top: -10px"><a href="' . $linkTarget . '" onclick="window.open(this.href); return false">' . $linkText . '</a></div>'
+                . $observer->getEvent()->getHtmlObj()->getHtml()
             );
         }
     }
