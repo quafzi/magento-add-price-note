@@ -25,7 +25,9 @@ class Quafzi_AddPriceNote_Model_Observer
             && ($linkText = $helper->getLinkText())
         ) {
             $observer->getEvent()->getHtmlObj()->setHtml(
-                '<div style="margin-bottom: 5px; margin-top: -5px"><a href="' . $linkTarget . '" onclick="window.open(this.href); return false">' . $linkText . '</a></div>'
+                '<div style="margin-bottom: 5px; margin-top: -5px">'
+                . '<a href="' . $linkTarget . '" onclick="window.open(this.href); return false" style="text-decoration: underline">'
+                . $linkText . '</a></div>'
                 . $observer->getEvent()->getHtmlObj()->getHtml()
             );
         }
